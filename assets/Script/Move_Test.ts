@@ -111,14 +111,18 @@ export default class Player extends cc.Component {
         }
     }
     start() {
-        // var manager = cc.director.getPhysicsManager();
-        // manager.enabled = true;
+        var manager = cc.director.getPhysicsManager();
+        manager.enabled = true;
         // manager.debugDrawFlags = cc.PhysicsManager.DrawBits.e_jointBit |
         // cc.PhysicsManager.DrawBits.e_aabbBit |
         // cc.PhysicsManager.DrawBits.e_centerOfMassBit |
         // cc.PhysicsManager.DrawBits.e_jointBit |
         // cc.PhysicsManager.DrawBits.e_shapeBit;
 
+        var collisionManager = cc.director.getCollisionManager();
+        collisionManager.enabled=true;
+        collisionManager.enabledDrawBoundingBox=true;
+        collisionManager.enabledDebugDraw=true;
         //     var position= this.player.getPosition();
         //     var cameraPosition=cc.v2(0,0);
         //     // var cameraPosition=  this.camera.getCameraToWorldPoint(position);
@@ -188,6 +192,8 @@ export default class Player extends cc.Component {
     //交互
     interact() {
 
+
+
     }
 
 
@@ -199,6 +205,9 @@ export default class Player extends cc.Component {
 
     //扔掉当前的武器
     dropWeapon() {
+          
+
+
 
     }
 
