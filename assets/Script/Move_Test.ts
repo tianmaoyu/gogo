@@ -10,6 +10,8 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import PrefabWeapon from '../Script/player_1/prefab_weapon';
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -43,9 +45,12 @@ export default class Player extends cc.Component {
 
     currentWeapon: cc.Node = null;
 
+    prefabWeapon:PrefabWeapon=null;
+
     onLoad() {
 
 
+        this.prefabWeapon=  this.getComponent<PrefabWeapon>(PrefabWeapon);
 
         //this.player_shoe=  this.node.getChildByName("shoe_0");
         //  var shoe_sprite= this.player_shoe.addComponent(cc.Sprite);
@@ -193,6 +198,7 @@ export default class Player extends cc.Component {
     interact() {
 
 
+        this.prefabWeapon.interact();
 
     }
 
