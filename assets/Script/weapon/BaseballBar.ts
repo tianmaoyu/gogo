@@ -23,10 +23,11 @@ export default class BaseBallBar extends cc.Component {
     //第一个个碰撞的uuid
     firstCollisionUUID: string = null;
 
+    nodeIndex:number=2;//放置在 第二的位置
     onLoad() {
 
-        this.label.string=this.text;
-        this.label.node.active=false;
+        //  this.label.string=this.text;
+        //  this.label.node.active=false;
         // this.label.string=""
         // var manager = cc.director.getCollisionManager();
         // manager.enabled=true;
@@ -35,11 +36,13 @@ export default class BaseBallBar extends cc.Component {
     }
 
     start() {
-
+        
     }
 
     // update (dt) {}
 
+
+    
     /**
      * 当碰撞产生的时候调用
      * @param  {Collider} other  cc.BoxCollider产生碰撞的另一个碰撞组件
@@ -49,9 +52,11 @@ export default class BaseBallBar extends cc.Component {
         var node = <cc.Node>other.node;
         this.firstCollisionUUID = node.uuid;
         this.isCollision=true;
-        this.label.node.active=true;
+        // this.label.node.active=true;
 
-        this.node.active=false;
+        // this.node.active=false;
+        // this.node.destroy
+        
         // console.info(" enter");
         // // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
         // var world = self.world;
@@ -85,7 +90,7 @@ export default class BaseBallBar extends cc.Component {
      */
     onCollisionExit(other, self) {
         this.isCollision=false;
-        this.label.node.active=false;
+        // this.label.node.active=false;
         //console.log('on collision exit');
     }
 

@@ -16,7 +16,7 @@
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_level": 1,
     "_components": [
       {
@@ -47,13 +47,13 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
+      "x": -1.464254180151004,
+      "y": 0.8218352709598847
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": -4,
+      "y": -1,
       "z": 0
     },
     "_scale": {
@@ -116,8 +116,8 @@
     "tag": 0,
     "_offset": {
       "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
+      "x": 83,
+      "y": -96
     },
     "_size": {
       "__type__": "cc.Size",
@@ -135,7 +135,7 @@
     },
     "_enabled": true,
     "label": null,
-    "text": "hello",
+    "text": "棒球棍；20点攻击",
     "_id": ""
   },
   {
@@ -144,9 +144,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "f06d66a8-d6b7-477d-ad53-a99db631a099"
+      "__uuid__": "962b4981-529d-4f81-aa3b-c4020af6cbe7"
     },
-    "fileId": "64XpQkmMhMY79u8oxk2pNf",
+    "fileId": "a7567aMMpG/LhBTHTkSVjL",
     "sync": false
   }
 ]

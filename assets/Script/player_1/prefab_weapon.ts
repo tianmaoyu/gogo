@@ -9,6 +9,7 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import BaseBallBar from '../weapon/BaseballBar';
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -24,6 +25,8 @@ export default class PrefabWeapon extends cc.Component {
 
     // onLoad () {}
 
+    weapon_map:cc.Node=null;
+
     start () {
 
     }
@@ -33,6 +36,28 @@ export default class PrefabWeapon extends cc.Component {
     }
     interact(){
         console.info("***********")
+
+        if(this.weapon_map==null)return;
+
+        var baseBallBar=  this.weapon_map.getComponent<BaseBallBar>(BaseBallBar);
+
+        if( baseBallBar.firstCollisionUUID!= this.node.uuid) return;
+        console.info("可以捡武器了！")
+        
+        baseBallBar.node.active=false;
+        setTimeout(function () {
+            baseBallBar.node.destroy();
+          }.bind(this), 5000);
+      
+
+        var displayIndex=baseBallBar.nodeIndex;
+        var weapon= cc.instantiate(this.weapon);
+
+        weapon.zIndex=displayIndex;
+        this.node.addChild(weapon);
+        //weapon.setParent(this.node);
+       
+
     }
 
      /**
@@ -44,7 +69,7 @@ export default class PrefabWeapon extends cc.Component {
         // var node = <cc.Node>other.node;
         // this.firstCollisionUUID = node.uuid;
         // this.isCollision=true;
-      
+        this.weapon_map=other.node;
         console.info(" player enter");
         // // 碰撞系统会计算出碰撞组件在世界坐标系下的相关的值，并放到 world 这个属性里面
         // var world = self.world;
@@ -78,7 +103,7 @@ export default class PrefabWeapon extends cc.Component {
      */
     onCollisionExit(other, self) {
         this.isCollision=false;
-    
+        this.weapon_map=null;
         //console.log('on collision exit');
     }
 
