@@ -56,7 +56,7 @@ export default class PrefabWeapon extends cc.Component {
         weapon.zIndex=displayIndex;
         this.node.addChild(weapon);
         //weapon.setParent(this.node);
-       
+       return weapon;
 
     }
 

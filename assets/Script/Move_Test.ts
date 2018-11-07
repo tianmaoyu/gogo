@@ -196,15 +196,14 @@ export default class Player extends cc.Component {
 
     //交互
     interact() {
-
-
-        this.prefabWeapon.interact();
-
+        this.currentWeapon= this.prefabWeapon.interact();
     }
 
 
-    //
+    //换武器
     change() {
+
+
 
     }
 
@@ -212,8 +211,13 @@ export default class Player extends cc.Component {
     //扔掉当前的武器
     dropWeapon() {
           
-
-
+        //直接 武器的父节点 换即可
+       //var player_world_position=  this.node.convertToWorldSpaceAR(cc.v2(0,0));
+       //this.currentWeapon.destroy();
+       this.currentWeapon.setPosition(this.node.getPosition());
+       var canvas_node=cc.find("Canvas");
+       this.currentWeapon.setParent(canvas_node);
+      // var weapon = cc.instantiate(this.prefabWeapon);
 
     }
 
