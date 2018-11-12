@@ -1,4 +1,6 @@
 import { WeaponType } from './WeaponType';
+import Player from '../Move_Test';
+
 
 const { ccclass, property } = cc._decorator;
 
@@ -6,11 +8,14 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class Shutgun extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
+    // @property(cc.Prefab)
+    // weapon: cc.Prefab = null;
 
-    @property
-     text: string = '散弹枪；30点攻击';
+    // @property(cc.Label)
+    // label: cc.Label = null;
+
+    // @property
+    //  text: string = '散弹枪；30点攻击';
 
      WeaponType:WeaponType=WeaponType.Shutgun;
     // constructor(){
@@ -20,6 +25,7 @@ export default class Shutgun extends cc.Component {
 
     //碰撞中
     isCollision: boolean = false;
+
     //第一个个碰撞的uuid
     firstCollisionUUID: string = null;
 
@@ -50,6 +56,45 @@ export default class Shutgun extends cc.Component {
 
     // update (dt) {}
 
+    interact(player:cc.Node){
+        console.info("***********")
+
+        //if(this.weapon_map==null)return;
+
+         //var palyer=cc.find("Player_1");
+         
+        //var baseBallBar=  this.weapon_map.getComponent<BaseBallBar>(BaseBallBar);
+
+       
+        //if( baseBallBar.firstCollisionUUID!= this.node.uuid) return;
+        console.info("可以捡武器了！")
+        
+        // baseBallBar.node.active=false;
+        // setTimeout(function () {
+        //     baseBallBar.node.destroy();
+        //   }.bind(this), 5000);
+        //var displayIndex=this.nodeIndex;
+       // var weapon= cc.instantiate(this.weapon);
+
+        //this.node.zIndex=1;
+
+    //    var node = cc.instantiate(this.node);
+    //    //this.node.removeFromParent();
+    //     player.addChild(node,1)
+
+    
+
+        this.node.rotation=this.rotation;
+        this.node.setPosition(this.position);
+
+        this.node.setParent(player)
+        //player.addChild(this.node);
+
+        //palyer.getChildByName("arms");
+        //weapon.setParent(this.node);
+       return   this.node;
+
+    }
 
     
     /**
@@ -61,6 +106,9 @@ export default class Shutgun extends cc.Component {
         var node = <cc.Node>other.node;
         this.firstCollisionUUID = node.uuid;
         this.isCollision=true;
+        var palyer=node.getComponent<Player>(Player);
+         //palyer.fun=this.interact;
+         palyer.weaponList.push(this);
         // this.label.node.active=true;
 
         // this.node.active=false;

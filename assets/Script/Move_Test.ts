@@ -37,7 +37,7 @@ export default class Player extends cc.Component {
 
 
     //武器
-    weaponList: cc.Node[] = [];
+    weaponList: any[] = [];
 
     //背包
     packges: cc.Node[] = [];
@@ -46,6 +46,8 @@ export default class Player extends cc.Component {
     currentWeapon: cc.Node = null;
 
     prefabWeapon:PrefabWeapon=null;
+
+    fun:Function=null;
 
     onLoad() {
 
@@ -189,14 +191,17 @@ export default class Player extends cc.Component {
 
     intersectionTest(react) {
 
-
+      
         // cc.Intersection.rectRect(rect,);
     }
 
 
     //交互
     interact() {
-        this.currentWeapon= this.prefabWeapon.interact();
+        //this.fun(this.node);
+        var component=this.weaponList[0];
+        this.currentWeapon=component.interact(this.node);
+         //this.currentWeapon= this.prefabWeapon.interact();
     }
 
 

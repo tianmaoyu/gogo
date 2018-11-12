@@ -17,7 +17,7 @@
     "_parent": null,
     "_children": [],
     "_active": true,
-    "_level": 2,
+    "_level": 1,
     "_components": [
       {
         "__id__": 2
@@ -127,14 +127,16 @@
     "_id": ""
   },
   {
-    "__type__": "17c26KPSv5B0aLN39V5t5TA",
+    "__type__": "750b2XNd5JJWZTVZyGXF6MT",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "weapon": null,
+    "weapon": {
+      "__uuid__": "40c82637-a612-4576-aabc-0f108744876d"
+    },
     "_id": ""
   },
   {
@@ -143,7 +145,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "40c82637-a612-4576-aabc-0f108744876d"
     },
     "fileId": "f4PMEX3EtP679gLvCrQFhj",
     "sync": false
