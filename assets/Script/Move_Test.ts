@@ -126,10 +126,10 @@ export default class Player extends cc.Component {
         // cc.PhysicsManager.DrawBits.e_jointBit |
         // cc.PhysicsManager.DrawBits.e_shapeBit;
 
-        var collisionManager = cc.director.getCollisionManager();
-        collisionManager.enabled=true;
-        collisionManager.enabledDrawBoundingBox=true;
-        collisionManager.enabledDebugDraw=true;
+        // var collisionManager = cc.director.getCollisionManager();
+        // collisionManager.enabled=true;
+        // collisionManager.enabledDrawBoundingBox=true;
+        // collisionManager.enabledDebugDraw=true;
         //     var position= this.player.getPosition();
         //     var cameraPosition=cc.v2(0,0);
         //     // var cameraPosition=  this.camera.getCameraToWorldPoint(position);

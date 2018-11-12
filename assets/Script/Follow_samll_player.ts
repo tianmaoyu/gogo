@@ -28,7 +28,7 @@ export default class NewClass extends cc.Component {
         if(this.targer==null) return;
         //var position_World=this.targer.convertToWorldSpaceAR(cc.v2(0,0));
         //cc.log("把player 的坐标 以 0，0 的世界坐标");
-        cc.log(this.node.getPosition());
+        //cc.log(this.node.getPosition());
         var player_world_position= this.targer.getPosition()
         //var position_Node= this.node.getParent().convertToNodeSpaceAR(position_World);
         //cc.log("把 player 的世界坐标 转成 flower 的 父节点下的坐标");
